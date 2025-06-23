@@ -1,0 +1,43 @@
+/* Kodigo Music - Global Styles */
+:root {
+  --primary-color: #1db954;
+  --dark-bg: #121212;
+  --card-bg: #181818;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --hover-bg: #282828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-dark-custom {
+  background-color: var(--dark-bg) !important;
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+}
+
+.text-secondary-custom {
+  color: var(--text-secondary) !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary-custom:hover {
+  background-color: #1ed760;
+  border-color: #1ed760;
+}
