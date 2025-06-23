@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { mockData } from "../../data/data";
 
 const Footer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -33,7 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="music-player bg-dark-custom border-top border-secondary fixed-bottom">
+    <footer className="music-player bg-dark-custom border-top border-secondary sticky-bottom">
       <div className="container-fluid py-2">
         <div className="row align-items-center">
           {/* Current Song Info */}
@@ -41,16 +42,16 @@ const Footer = () => {
             <div className="d-flex align-items-center">
               <div className="current-song-image me-3">
                 <img
-                  src="https://via.placeholder.com/56x56/1db954/ffffff?text=♪"
+                  src={mockData[0].image}
                   alt="Current Song"
                   className="rounded"
                   style={{ width: "56px", height: "56px" }}
                 />
               </div>
               <div className="current-song-info d-none d-md-block">
-                <h6 className="mb-0 text-white">Canción de Ejemplo</h6>
+                <h6 className="mb-0 text-white">{mockData[0].title}</h6>
                 <small className="text-secondary-custom">
-                  Artista de Ejemplo
+                  {mockData[0].artist}
                 </small>
               </div>
               <div className="song-actions ms-3 d-none d-md-block">

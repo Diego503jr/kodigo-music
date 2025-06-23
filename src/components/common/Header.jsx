@@ -1,18 +1,9 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [showUserMenu, setShowUserMenu] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
-    }
-  };
 
   const goBack = () => {
     window.history.back();
@@ -26,14 +17,20 @@ const Header = () => {
     setShowUserMenu(!showUserMenu);
   };
 
-  const isSearchPage = location.pathname === "/search";
+  const handleLogout = () => {
+    setTimeout(() => {
+      localStorage.removeItem("user");
+
+      navigate("/login");
+    }, 3000);
+  };
 
   return (
     <header className="main-header bg-dark-custom sticky-top">
       <div className="container-fluid">
         <div className="row align-items-center py-3">
           {/* Navigation Controls */}
-          <div className="col-lg-3 col-4">
+          <div className="col-lg-4">
             <div className="d-flex align-items-center">
               <button
                 className="btn btn-dark rounded-circle me-2"
@@ -52,29 +49,8 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Search Bar */}
-          <div className="col-lg-6 col-4">
-            {isSearchPage && (
-              <form onSubmit={handleSearch} className="search-form">
-                <div className="input-group">
-                  <span className="input-group-text bg-white border-0">
-                    <i className="bi bi-search text-dark"></i>
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control border-0"
-                    placeholder="¿Qué quieres escuchar?"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    style={{ backgroundColor: "white", color: "black" }}
-                  />
-                </div>
-              </form>
-            )}
-          </div>
-
           {/* User Menu */}
-          <div className="col-lg-3 col-4">
+          <div className="col-lg-6">
             <div className="d-flex align-items-center justify-content-end">
               {/* Upgrade Button */}
               <button className="btn btn-outline-light me-3 d-none d-md-block">
@@ -85,7 +61,7 @@ const Header = () => {
               {/* Download App */}
               <button className="btn btn-dark me-3 d-none d-lg-block">
                 <i className="bi bi-download me-1"></i>
-                Instalar App
+                Instalar
               </button>
 
               {/* Notifications */}
@@ -110,7 +86,7 @@ const Header = () => {
                 </button>
 
                 {showUserMenu && (
-                  <ul className="dropdown-menu dropdown-menu-end show">
+                  <ul className="dropdown-menu dropdown-menu-start show">
                     <li>
                       <a className="dropdown-item" href="#">
                         <i className="bi bi-person me-2"></i>
@@ -127,7 +103,7 @@ const Header = () => {
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" onClick={handleLogout}>
                         <i className="bi bi-box-arrow-right me-2"></i>
                         Cerrar sesión
                       </a>

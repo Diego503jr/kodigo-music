@@ -53,7 +53,6 @@
 
 /* ===== HEADER STYLES ===== */
 .main-header {
-  z-index: 998;
   backdrop-filter: blur(10px);
   background-color: rgba(18, 18, 18, 0.9) !important;
 }
