@@ -11,8 +11,17 @@ Una SPA de música inspirada en Spotify, Deezer y Apple Music, construida con Re
 - ✅ Formulario validado:
   - Registro de usuario / Búsqueda / Crear playlist
   - Validación manual o con `react-hook-form`
-- 🆙 Gestión de estado (Context API / Redux)
-- 🚀 Deploy en producción (Vercel / Netlify)
+- 🆙 Gestión de estado (Context API)
+- 🚀 Deploy en producción (Vercel)
+
+## 🔐 Autenticación con Firebase
+
+Se implementará registro e inicio de sesión usando Firebase Authentication:
+
+- 📧 Registro con correo y contraseña
+- 🔑 Inicio de sesión con email/password
+- 🔍 Protección de rutas
+- ⚙️ Configuración segura vía variables de entorno (`.env`)
 
 ## 🛠 Tecnologías
 
@@ -20,7 +29,7 @@ Una SPA de música inspirada en Spotify, Deezer y Apple Music, construida con Re
 - [React.js](https://reactjs.org/)
 - [react-router-dom](https://reactrouter.com/)
 - Validación de formularios con React o `react-hook-form`
-- CSS con Tailwind / Styled Components / CSS Modules
+- CSS con Bootstrap
 
 ## 🔧 Instalación
 
