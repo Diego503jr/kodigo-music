@@ -1,12 +1,32 @@
-# React + Vite
+# Kodigo Music 🎵
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una SPA de música inspirada en Spotify, Deezer y Apple Music, construida con React + Vite.
 
-Currently, two official plugins are available:
+## 📌 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Diseño atractivo y completamente responsive.
+- ✅ Rutas implementadas con `react-router-dom`:
+  - `/` → Home / Descubrimiento
+  - `/library` → Biblioteca personal
+- ✅ Formulario validado:
+  - Registro de usuario / Búsqueda / Crear playlist
+  - Validación manual o con `react-hook-form`
+- 🆙 Gestión de estado (Context API / Redux)
+- 🚀 Deploy en producción (Vercel / Netlify)
 
-## Expanding the ESLint configuration
+## 🛠 Tecnologías
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Vite](https://vitejs.dev/)
+- [React.js](https://reactjs.org/)
+- [react-router-dom](https://reactrouter.com/)
+- Validación de formularios con React o `react-hook-form`
+- CSS con Tailwind / Styled Components / CSS Modules
+
+## 🔧 Instalación
+
+```bash
+git clone https://github.com/tu-usuario/kodigo-music.git
+cd kodigo-music
+npm install
+npm run dev
+
