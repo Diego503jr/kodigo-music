@@ -36,9 +36,9 @@ const Navbar = () => {
 
       {/* Sidebar Navigation */}
       <nav
-        className={`sidebar bg-dark-custom ${isCollapsed ? "collapsed" : ""}`}
+        className={`sidebar bg-dark-custom border-end border-secondary ${isCollapsed ? "collapsed" : ""}`}
       >
-        <div className="sidebar-content p-3">
+        <div className="sidebar-content p-3 h-100 d-flex flex-column">
           {/* Logo - Solo visible en desktop */}
           <div className="d-none d-lg-block mb-4">
             <Link to="/" className="text-decoration-none">

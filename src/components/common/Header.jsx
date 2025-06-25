@@ -26,11 +26,11 @@ const Header = () => {
   };
 
   return (
-    <header className="main-header bg-dark-custom sticky-top">
+    <header className="main-header bg-dark-custom">
       <div className="container-fluid">
         <div className="row align-items-center py-3">
           {/* Navigation Controls */}
-          <div className="col-lg-4">
+          <div className="col-md-4">
             <div className="d-flex align-items-center">
               <button
                 className="btn btn-dark rounded-circle me-2"

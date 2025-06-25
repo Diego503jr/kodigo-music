@@ -34,7 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="music-player bg-dark-custom border-top border-secondary sticky-bottom">
+    <footer className="music-player bg-dark-custom border-top border-secondary sticky-bottom h-25">
       <div className="container-fluid py-2">
         <div className="row align-items-center">
           {/* Current Song Info */}
