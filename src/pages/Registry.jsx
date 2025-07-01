@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const Login = () => {
+const Registry = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,19 +16,20 @@ const Login = () => {
     mode: "onChange",
   });
 
-  const { login } = useAuth();
+const { signup } = useAuth();
 
-  const onSubmit = async (data) => {
-    setIsLoading(true);
-    try {
-      await login(data.email, data.password);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const onSubmit = async (data) => {
+  setIsLoading(true);
+  try {
+    await signup(data.email, data.password);
+    navigate("/");
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -56,7 +57,7 @@ const Login = () => {
                 className="text-white mb-2"
                 style={{ fontSize: "2rem", fontWeight: "700" }}
               >
-                Inicia sesión en Kodigo Music
+                Registrate en Kodigo Music
               </h1>
             </div>
 
@@ -286,4 +287,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registry;
